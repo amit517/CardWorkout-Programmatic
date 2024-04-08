@@ -14,10 +14,31 @@ class CardSelectionVC: UIViewController {
     let resetButton = CWButton(backgroundColor: .systemGreen, title: "Reset")
     let ruleButton = CWButton(backgroundColor: .systemBlue, title: "Rules")
 
+    var cards: [UIImage] = CardDeck.allValues
+    var timer: Timer!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureUI()
+        startTimer()
+    }
+
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(showRandomImage), userInfo: nil, repeats: true)
+    }
+
+    @objc func showRandomImage() {
+        cardImageView.image = cards.randomElement() ?? UIImage(named: "AS")
+    }
+
+    @objc func stopTimer() {
+        timer.invalidate()
+    }
+
+    @objc func resetTimer() {
+        stopTimer()
+        startTimer()
     }
 
     func configureUI() {
@@ -42,6 +63,7 @@ class CardSelectionVC: UIViewController {
 
     func configureStopButton() {
         view.addSubview(stopButton)
+        stopButton.addTarget(self, action: #selector(stopTimer), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
             stopButton.widthAnchor.constraint(equalToConstant: 260),
@@ -54,7 +76,8 @@ class CardSelectionVC: UIViewController {
 
     func configureRestButton() {
         view.addSubview(resetButton)
-        
+        resetButton.addTarget(self, action: #selector(resetTimer), for: .touchUpInside)
+
         NSLayoutConstraint.activate([
             resetButton.widthAnchor.constraint(equalToConstant: 115),
             resetButton.heightAnchor.constraint(equalToConstant: 50),
@@ -62,11 +85,11 @@ class CardSelectionVC: UIViewController {
             resetButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor, constant: 20)
         ])
     }
-    
+
     func configureRulesButton() {
         view.addSubview(ruleButton)
         ruleButton.addTarget(self, action: #selector(presentRulesVC), for: .touchUpInside)
-        
+
         NSLayoutConstraint.activate([
             ruleButton.widthAnchor.constraint(equalToConstant: 115),
             ruleButton.heightAnchor.constraint(equalToConstant: 50),
@@ -74,7 +97,7 @@ class CardSelectionVC: UIViewController {
             ruleButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor, constant: 20)
         ])
     }
-    
+
     @objc func presentRulesVC() {
         present(RulesVC(), animated: true)
     }

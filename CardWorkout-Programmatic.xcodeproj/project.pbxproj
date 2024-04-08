@@ -17,6 +17,7 @@
 		EF52DB6B2BC301B90087C5B5 /* CardSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52DB6A2BC301B90087C5B5 /* CardSelectionVC.swift */; };
 		EF52DB6D2BC304440087C5B5 /* CWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52DB6C2BC304440087C5B5 /* CWButton.swift */; };
 		EF7981232BC32BA90037403C /* RulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7981222BC32BA90037403C /* RulesVC.swift */; };
+		EFF2C16D2BC46C8D002B1926 /* CardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C16C2BC46C8D002B1926 /* CardDeck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		EF52DB6A2BC301B90087C5B5 /* CardSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionVC.swift; sourceTree = "<group>"; };
 		EF52DB6C2BC304440087C5B5 /* CWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CWButton.swift; sourceTree = "<group>"; };
 		EF7981222BC32BA90037403C /* RulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesVC.swift; sourceTree = "<group>"; };
+		EFF2C16C2BC46C8D002B1926 /* CardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				EF52DB3A2BC2FC0D0087C5B5 /* SceneDelegate.swift */,
 				EF52DB6A2BC301B90087C5B5 /* CardSelectionVC.swift */,
 				EF7981222BC32BA90037403C /* RulesVC.swift */,
+				EFF2C16C2BC46C8D002B1926 /* CardDeck.swift */,
 				EF52DB412BC2FC0E0087C5B5 /* Assets.xcassets */,
 				EF52DB432BC2FC0E0087C5B5 /* LaunchScreen.storyboard */,
 				EF52DB462BC2FC0E0087C5B5 /* Info.plist */,
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF2C16D2BC46C8D002B1926 /* CardDeck.swift in Sources */,
 				EF52DB392BC2FC0D0087C5B5 /* AppDelegate.swift in Sources */,
 				EF7981232BC32BA90037403C /* RulesVC.swift in Sources */,
 				EF52DB3B2BC2FC0D0087C5B5 /* SceneDelegate.swift in Sources */,
