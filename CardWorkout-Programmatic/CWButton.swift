@@ -17,7 +17,7 @@ class CWButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(backgroundColor: UIColor, title: String) {
+    init(backgroundColor: UIColor, title: String, systemImageName: String) {
         super.init(frame: .zero)
 
         configuration = .tinted()
@@ -25,6 +25,11 @@ class CWButton: UIButton {
         configuration?.baseBackgroundColor = backgroundColor
         configuration?.baseForegroundColor = backgroundColor
         configuration?.cornerStyle = .medium
+        
+        configuration?.image = UIImage(systemName: systemImageName)
+        configuration?.imagePadding = 5
+        configuration?.imagePlacement = .trailing
+        
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
